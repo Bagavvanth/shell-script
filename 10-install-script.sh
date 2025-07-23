@@ -8,7 +8,8 @@ then
     exit 1 #other than zero
 fi
 
-dnf install mysqll -y
+dnf install mysql -y
+
 if [ $? -ne 0 ]
 then 
    echo "Installing MySql...FAILURE"
@@ -18,6 +19,7 @@ else
 fi
 
 dnf install git -y
+
 if [ $? -ne 0 ]
 then 
     echo "Installing Git...Failure"
