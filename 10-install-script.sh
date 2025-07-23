@@ -9,4 +9,4 @@ fi
 
 dnf install mysqll -y
 
-dnf install fit -y
+dnf install git -y
