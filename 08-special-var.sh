@@ -9,3 +9,5 @@ echo "No 0f variables $#"
 echo "pwd: $PWD" 
 sleep 60 & 
 echo "process id: $$"
+echo "process id of last command in background: $$"
+echo "process id of current script: $*"
