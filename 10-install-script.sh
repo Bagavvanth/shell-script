@@ -9,5 +9,11 @@ then
 fi
 
 dnf install mysqll -y
+if [ $? ne 0 ]
+   echo "Installing MySql...FAILURE"
+   exit1
+else
+   echo "Installing MySql..SUCCESS"
+fi
 
 dnf install git -y
