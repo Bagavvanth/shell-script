@@ -20,7 +20,7 @@ VALIDATE(){
         echo -e "$2.. $G SUCCESS"
      fi   
      }
- echo "Script started executing at: $TIMESTAMP" %>>$LOG_FILE_NAME 
+ echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME 
 
 if [ $USERID -ne 0 ]
 then 
