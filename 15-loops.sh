@@ -21,7 +21,7 @@ VALIDATE(){
         echo -e "$2.. $G SUCCESS $N"
      fi   
      }
- echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME 
+ echo "Script started executing at: $TIMESTAMP" #&>>$LOG_FILE_NAME 
 
 if [ $USERID -ne 0 ]
 then 
@@ -29,22 +29,22 @@ then
     exit 1 #other than zero
 fi
 
-dnf list installed mysql  &>>$LOG_FILE_NAME
+dnf list installed mysql  #&>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then 
-    dnf install mysql -y  &>>$LOG_FILE_NAME
+    dnf install mysql -y  #&>>$LOG_FILE_NAME
     VALIDATE $? "Installing MySql"
     
 else 
     echo -e "MySql is already..$Y INSTALLED $N"
 fi       
 
-dnf list installed Git  &>>$LOG_FILE_NAME
+dnf list installed Git  #&>>$LOG_FILE_NAME
     
 if [ $? -ne 0 ]
 then 
-    dnf install git -y  &>>$LOG_FILE_NAME
+    dnf install git -y # &>>$LOG_FILE_NAME
     VALIDATE $? "Installing Git"
 else
     echo -e "Git is already ..$Y INSTALLED $N"
@@ -52,10 +52,10 @@ fi
 
 for package in $@
 do 
-   dnf list installed $package &>>LOG_FILE_NAME
+   dnf list installed $package #&>>LOG_FILE_NAME
    if [ $? -ne 0 ]
    then 
-       dnf install $package -y &>>LOG_FILE_NAME
+       dnf install $package -y #&>>LOG_FILE_NAME
        VALIDATE $? "Installing $package"
     else 
         echo "$package is already $Y ..Installed $N"
